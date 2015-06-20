@@ -1,6 +1,10 @@
 package com.jd.o2o.configuration;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import com.jd.o2o.constant.Level;
@@ -22,8 +26,8 @@ public class ConfigurationVO implements Serializable {
   private int count;
   private long bufferSize;
   private Level minThreshold;
-  private Set<Filter> filter;
-  private IMemoryManager memoryManager;
+  private transient Set<Filter> filterSet;
+  private transient IMemoryManager memoryManager;
 
   public int getCount() {
     return count;
@@ -49,12 +53,12 @@ public class ConfigurationVO implements Serializable {
     this.minThreshold = minThreshold;
   }
 
-  public Set<Filter> getFilter() {
-    return filter;
+  public Set<Filter> getFilterSet() {
+    return filterSet;
   }
 
-  public void setFilter(Set<Filter> filter) {
-    this.filter = filter;
+  public void setFilterSet(Set<Filter> filterSet) {
+    this.filterSet = filterSet;
   }
 
   public IMemoryManager getMemoryManager() {
@@ -81,6 +85,55 @@ public class ConfigurationVO implements Serializable {
     }
   }
 
+  /**
+   * 序列化对象
+   * 
+   * @param s
+   */
+  private void writeObject(ObjectOutputStream s) throws IOException {
+    s.defaultWriteObject();
+    s.writeInt(count);
+    s.writeLong(bufferSize);
+    s.writeObject(minThreshold);
+    if (filterSet != null) {
+      s.writeInt(filterSet.size());
+      for (Filter filter : filterSet) {
+        s.writeObject(filter.getClass());
+      }
+    } else {
+      s.writeInt(-1);
+    }
+    s.writeObject(memoryManager.getClass());
+  }
+
+  /**
+   * 反序列化对象
+   * 
+   * @param s
+   * @throws IOException
+   * @throws ClassNotFoundException
+   * @throws IllegalAccessException
+   * @throws InstantiationException
+   */
+  private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException,
+      InstantiationException, IllegalAccessException {
+    s.defaultReadObject();
+    count = s.readInt();
+    bufferSize = s.readLong();
+    minThreshold = (Level) s.readObject();
+    int size = s.readInt();
+    if (size != -1) {
+      // 默认使用LinkedHashSet保证filter的顺序
+      filterSet = new LinkedHashSet<Filter>();
+      for (int i = 0; i < size; i++) {
+        Class<?> filterClazz = (Class<?>) s.readObject();
+        filterSet.add((Filter) filterClazz.newInstance());
+      }
+    }
+    Class<?> memoryManagerClazz = (Class<?>) s.readObject();
+    memoryManager = (IMemoryManager) memoryManagerClazz.newInstance();
+  }
+
   public String toString() {
     StringBuilder builder = new StringBuilder();
     String memoryStr = super.toString();
@@ -88,7 +141,7 @@ public class ConfigurationVO implements Serializable {
     builder.append("count: ").append(count).append("\n");
     builder.append("bufferSize: ").append(bufferSize).append("\n");
     builder.append("minThreshold: ").append(minThreshold).append("\n");
-    builder.append("filter: ").append(filter).append("\n");
+    builder.append("filterSet: ").append(filterSet).append("\n");
     builder.append("memoryManager: ").append(memoryManager);
     return builder.toString();
   }

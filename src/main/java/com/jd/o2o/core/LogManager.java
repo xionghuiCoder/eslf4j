@@ -76,7 +76,7 @@ public class LogManager {
     queue.add(bean);
     ConfigurationVO vo = cfgVO;
     if (vo != null) {
-      Set<Filter> filterSet = vo.getFilter();
+      Set<Filter> filterSet = vo.getFilterSet();
       if (filterSet != null) {
         for (Filter filter : filterSet) {
           boolean ifContinue = filter.doFilter(bean);

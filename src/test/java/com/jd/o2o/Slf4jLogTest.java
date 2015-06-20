@@ -5,6 +5,13 @@ import junit.framework.TestCase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Slf4jLog test
+ *
+ * @author xionghui
+ * @date 2015年6月20日
+ *
+ */
 public class Slf4jLogTest extends TestCase {
   protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 

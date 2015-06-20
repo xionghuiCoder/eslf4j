@@ -10,7 +10,7 @@ import com.jd.o2o.core.bean.MessageBean;
 
 /**
  * 固定长度的队列<br />
- * FixedQueue是非线程安全的，但它总被threadLocal包装
+ * FixedQueue是非线程安全的；不过没关系，因为它总被threadLocal包装
  *
  * @author xionghui
  * @date 2015年6月16日
@@ -70,6 +70,7 @@ public class FixedQueue extends AbstractQueue<MessageBean> {
 
   @Override
   public MessageBean peek() {
+    // 不支持，因为获取必消费
     throw new UnsupportedOperationException();
   }
 

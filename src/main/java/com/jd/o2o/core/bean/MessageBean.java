@@ -1,5 +1,7 @@
 package com.jd.o2o.core.bean;
 
+import java.io.Serializable;
+
 /**
  * 消息bean
  *
@@ -7,7 +9,9 @@ package com.jd.o2o.core.bean;
  * @date 2015年6月16日
  *
  */
-public class MessageBean {
+public class MessageBean implements Serializable {
+  private static final long serialVersionUID = 5070176044761727162L;
+
   private String message;
   private Throwable throwable;
 
@@ -30,6 +34,15 @@ public class MessageBean {
 
   public void setThrowable(Throwable throwable) {
     this.throwable = throwable;
+  }
+
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    String beanStr = super.toString();
+    builder.append(beanStr).append("\n");
+    builder.append("message: ").append(message).append("\n");
+    builder.append("throwable: ").append(throwable);
+    return builder.toString();
   }
 
   /**

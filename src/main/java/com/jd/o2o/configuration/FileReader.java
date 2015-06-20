@@ -221,7 +221,7 @@ public class FileReader {
     }
 
     private static void setFilter(ConfigurationVO cfgVO, String value) {
-      Set<Filter> filterSet = cfgVO.getFilter();
+      Set<Filter> filterSet = cfgVO.getFilterSet();
       if (filterSet == null) {
         filterSet = new LinkedHashSet<Filter>();
       }
@@ -233,7 +233,7 @@ public class FileReader {
         throw new Eslf4jConfigurationException(e);
       }
       filterSet.add(filter);
-      cfgVO.setFilter(filterSet);
+      cfgVO.setFilterSet(filterSet);
     }
 
     private static void setMemoryManager(ConfigurationVO cfgVO, String value) {

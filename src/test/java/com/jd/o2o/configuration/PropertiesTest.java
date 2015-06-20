@@ -8,6 +8,9 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
+
 import com.jd.o2o.helpers.LoaderHelper;
 
 /**
@@ -17,7 +20,9 @@ import com.jd.o2o.helpers.LoaderHelper;
  * @date 2015年6月15日
  *
  */
+@FixMethodOrder(MethodSorters.DEFAULT)
 public class PropertiesTest extends TestCase {
+
   public void test_samekey() {
     System.out.println("test same key:");
     String path = "same_key.properties";

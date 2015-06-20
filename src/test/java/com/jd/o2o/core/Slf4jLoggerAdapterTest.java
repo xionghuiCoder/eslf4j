@@ -15,7 +15,6 @@ import org.slf4j.Logger;
  * @date 2015年6月20日
  *
  */
-@FixMethodOrder(MethodSorters.DEFAULT)
 public class Slf4jLoggerAdapterTest extends TestCase {
   private static CountDownLatch latch = new CountDownLatch(2);
 
