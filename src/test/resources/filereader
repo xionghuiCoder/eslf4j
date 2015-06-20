@@ -1,0 +1,6 @@
+count=10
+buffersize=200b
+minthreshold=info
+filter=com.jd.o2o.filter.Null1Filter
+filter=com.jd.o2o.filter.Null2Filter
+memorymanager=com.jd.o2o.memory.NullMemoryManager
