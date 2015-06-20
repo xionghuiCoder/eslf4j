@@ -4,8 +4,6 @@ import java.util.concurrent.CountDownLatch;
 
 import junit.framework.TestCase;
 
-import org.junit.FixMethodOrder;
-import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 
 /**
