@@ -16,9 +16,9 @@ eslf4j配置：<br />
 <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>filter=com.jd.o2o.filter.Null2Filter<br />
 <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>memorymanager=com.jd.o2o.memory.NullMemoryManager<br />
 <ol>
-<li>count为上下文的日志数量，必须配置（否则可能会造成内存泄露，这跟线程连接池和ThreadLocal的实现有关，就不详解了）；比如这里配置为100，表示一旦打印一条日志，会同时打印出该条日志前的100条日志。</li>
-<li>buffersize为eslf4j缓存的日志所占用的空间，必须配置，当缓存达到配置的大小时就会使用配置的memorymanager来释放内存；这里配置的buffersize为10m，表示缓存最多会占用10m内存，另外支持单位b（比特），k（kb），g（gb）</li>
-<li>minthreshold为缓存的最低闸值，必须配置，支持all,trace,debug,info,warn,error,fatal和off；比如这里配置为debug，只有级别大于或等于debug的日志才会被缓存并打印出来。</li>
+<li>count为上下文的日志数量，必须配置（否则可能会造成内存泄露，这跟线程连接池和ThreadLocal的实现有关，就不详细介绍了）；比如这里配置为100，表示一旦打印一条日志，会同时打印出该条日志前的100条日志。</li>
+<li>buffersize为eslf4j缓存的日志所占用的空间，必须配置，当缓存达到配置的大小时就会使用memorymanager来释放内存；这里配置的buffersize为10m，表示缓存最多会占用10m内存，另外支持单位b（bit），k（kb），g（gb）。</li>
+<li>minthreshold为日志级别的最低闸值，必须配置，支持all,trace,debug,info,warn,error,fatal和off；比如这里配置为debug，只有级别大于或等于debug的日志才会被缓存并打印出来。</li>
 <li>filter是日志过滤器，是一个扩展点，可以配置也可以不配置，当然也可以配置多个；filter需要实现com.jd.o2o.core.filter.Filter接口，而且需要一个无参构造器；filter会在日志被缓存前调用，可以自处理日志。</li>
 <li>memorymanager用于管理内存，也是一个扩展点，可以配置也可以不配置，memorymanager需要实现com.jd.o2o.core.memory.IMemoryManager接口，而且需要一个无参构造器，如果不配置会默认使用com.jd.o2o.core.memory.impl.DefaultMemoryManagerImpl来管理内存，memorymanager会在日志缓存达到buffersize时调用来释放内存。</li>
 </ol>
