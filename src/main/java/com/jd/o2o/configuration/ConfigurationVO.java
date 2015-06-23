@@ -92,9 +92,9 @@ public class ConfigurationVO implements Serializable {
    */
   private void writeObject(ObjectOutputStream s) throws IOException {
     s.defaultWriteObject();
-    s.writeInt(count);
-    s.writeLong(bufferSize);
-    s.writeObject(minThreshold);
+    // s.writeInt(count);
+    // s.writeLong(bufferSize);
+    // s.writeObject(minThreshold);
     if (filterSet != null) {
       s.writeInt(filterSet.size());
       for (Filter filter : filterSet) {
@@ -118,9 +118,9 @@ public class ConfigurationVO implements Serializable {
   private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException,
       InstantiationException, IllegalAccessException {
     s.defaultReadObject();
-    count = s.readInt();
-    bufferSize = s.readLong();
-    minThreshold = (Level) s.readObject();
+    // count = s.readInt();
+    // bufferSize = s.readLong();
+    // minThreshold = (Level) s.readObject();
     int size = s.readInt();
     if (size != -1) {
       // 默认使用LinkedHashSet保证filter的顺序

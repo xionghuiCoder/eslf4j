@@ -46,13 +46,29 @@ public class LogManager {
   }
 
   LogManager() {
+    // getAndInitQueue();
+    // 不能在此处初始化，比如在spring mvc框架中会反射调用构造函数，而后面getQueue的ThreadLocal会在不同的线程中，会返回null
+  }
+
+  /**
+   * 获取queue，如果没有queue，则初始化queue<br />
+   * 懒加载queueLocal
+   * 
+   * @return
+   */
+  private FixedQueue getAndInitQueue() {
+    FixedQueue queue = queueLocal.get();
+    if (queue != null) {
+      return queue;
+    }
     ConfigurationVO vo = cfgVO;
     if (vo == null) {
-      return;
+      return null;
     }
     int count = vo.getCount();
-    FixedQueue queue = new FixedQueue(count);
+    queue = new FixedQueue(count);
     queueLocal.set(queue);
+    return queue;
   }
 
   /**
@@ -72,7 +88,10 @@ public class LogManager {
   }
 
   public void manager(MessageBean bean) {
-    FixedQueue queue = queueLocal.get();
+    FixedQueue queue = getAndInitQueue();
+    if (queue == null) {
+      return;
+    }
     queue.add(bean);
     ConfigurationVO vo = cfgVO;
     if (vo != null) {
@@ -94,8 +113,8 @@ public class LogManager {
     }
   }
 
-  public Queue<MessageBean> getQueue() {
-    Queue<MessageBean> queue = queueLocal.get();
+  public FixedQueue getQueue() {
+    FixedQueue queue = getAndInitQueue();
     return queue;
   }
 

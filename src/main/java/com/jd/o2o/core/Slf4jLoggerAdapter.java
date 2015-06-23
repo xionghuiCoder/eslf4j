@@ -65,11 +65,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isTraceEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.trace(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.trace(m, tb);
+        }
       }
       logger.trace(message);
     } else {
@@ -90,11 +92,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isTraceEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.trace(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.trace(m, tb);
+        }
       }
       logger.trace(message, arg);
     } else {
@@ -117,11 +121,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isTraceEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.trace(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.trace(m, tb);
+        }
       }
       logger.trace(message, arg1, arg2);
     } else {
@@ -144,11 +150,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isTraceEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.trace(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.trace(m, tb);
+        }
       }
       logger.trace(message, arguments);
     } else {
@@ -171,11 +179,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isTraceEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.trace(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.trace(m, tb);
+        }
       }
       logger.trace(message, t);
     } else {
@@ -201,11 +211,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isDebugEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.debug(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.debug(m, tb);
+        }
       }
       logger.debug(message);
     } else {
@@ -226,11 +238,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isDebugEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.debug(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.debug(m, tb);
+        }
       }
       logger.debug(message, arg);
     } else {
@@ -253,11 +267,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isDebugEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.debug(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.debug(m, tb);
+        }
       }
       logger.debug(message, arg1, arg2);
     } else {
@@ -280,11 +296,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isDebugEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.debug(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.debug(m, tb);
+        }
       }
       logger.debug(message, arguments);
     } else {
@@ -307,11 +325,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isDebugEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.debug(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.debug(m, tb);
+        }
       }
       logger.debug(message, t);
     } else {
@@ -337,11 +357,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isInfoEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.info(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.info(m, tb);
+        }
       }
       logger.info(message);
     } else {
@@ -362,11 +384,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isInfoEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.info(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.info(m, tb);
+        }
       }
       logger.info(message, arg);
     } else {
@@ -389,11 +413,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isInfoEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.info(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.info(m, tb);
+        }
       }
       logger.info(message, arg1, arg2);
     } else {
@@ -416,11 +442,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isInfoEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.info(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.info(m, tb);
+        }
       }
       logger.info(message, arguments);
     } else {
@@ -443,11 +471,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isInfoEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.info(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.info(m, tb);
+        }
       }
       logger.info(message, t);
     } else {
@@ -473,11 +503,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isWarnEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.warn(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.warn(m, tb);
+        }
       }
       logger.warn(message);
     } else {
@@ -498,11 +530,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isWarnEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.warn(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.warn(m, tb);
+        }
       }
       logger.warn(message, arg);
     } else {
@@ -525,11 +559,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isWarnEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.warn(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.warn(m, tb);
+        }
       }
       logger.warn(message, arg1, arg2);
     } else {
@@ -552,11 +588,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isWarnEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.warn(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.warn(m, tb);
+        }
       }
       logger.warn(message, arguments);
     } else {
@@ -579,11 +617,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isWarnEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.warn(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.warn(m, tb);
+        }
       }
       logger.warn(message, t);
     } else {
@@ -609,11 +649,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isErrorEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.error(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.error(m, tb);
+        }
       }
       logger.error(message);
     } else {
@@ -634,11 +676,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isErrorEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.error(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.error(m, tb);
+        }
       }
       logger.error(message, arg);
     } else {
@@ -661,11 +705,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isErrorEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.error(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.error(m, tb);
+        }
       }
       logger.error(message, arg1, arg2);
     } else {
@@ -688,11 +734,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isErrorEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.error(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.error(m, tb);
+        }
       }
       logger.error(message, arguments);
     } else {
@@ -715,11 +763,13 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
     }
     if (isErrorEnabled()) {
       Queue<MessageBean> msgQueue = logManager.getQueue();
-      while (msgQueue.size() > 0) {
-        MessageBean b = msgQueue.remove();
-        String m = b.getMessage();
-        Throwable tb = b.getThrowable();
-        logger.error(m, tb);
+      if (msgQueue != null) {
+        while (msgQueue.size() > 0) {
+          MessageBean b = msgQueue.remove();
+          String m = b.getMessage();
+          Throwable tb = b.getThrowable();
+          logger.error(m, tb);
+        }
       }
       logger.error(message, t);
     } else {
