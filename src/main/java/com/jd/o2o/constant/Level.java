@@ -10,8 +10,14 @@ import com.jd.o2o.exception.Eslf4jConfigurationException;
  *
  */
 public enum Level {
-  ALL(Integer.MIN_VALUE, "ALL"), TRACE(5000, "TRACE"), DEBUG(10000, "DEBUG"), INFO(20000, "INFO"), WARN(
-      30000, "WARN"), ERROR(40000, "ERROR"), FATAL(50000, "FATAL"), OFF(Integer.MAX_VALUE, "OFF");
+  ALL(Integer.MIN_VALUE, "ALL"), //
+  TRACE(5000, "TRACE"), //
+  DEBUG(10000, "DEBUG"), //
+  INFO(20000, "INFO"), //
+  WARN(30000, "WARN"), //
+  ERROR(40000, "ERROR"), //
+  FATAL(50000, "FATAL"), //
+  OFF(Integer.MAX_VALUE, "OFF");
 
   private final int value;
   private final String name;
