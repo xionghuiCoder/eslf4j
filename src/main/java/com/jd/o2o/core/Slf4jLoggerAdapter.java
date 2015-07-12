@@ -76,7 +76,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.trace(message);
     } else {
       MessageBean bean = new MessageBean.Builder(message).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -105,7 +105,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -134,7 +134,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg1, arg2);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -163,7 +163,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.arrayFormat(message, arguments);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -190,7 +190,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.trace(message, t);
     } else {
       MessageBean bean = new MessageBean.Builder(message).throwable(t).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -222,7 +222,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.debug(message);
     } else {
       MessageBean bean = new MessageBean.Builder(message).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -251,7 +251,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -280,7 +280,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg1, arg2);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -309,7 +309,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.arrayFormat(message, arguments);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -336,7 +336,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.debug(message, t);
     } else {
       MessageBean bean = new MessageBean.Builder(message).throwable(t).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -368,7 +368,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.info(message);
     } else {
       MessageBean bean = new MessageBean.Builder(message).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -397,7 +397,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -426,7 +426,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg1, arg2);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -455,7 +455,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.arrayFormat(message, arguments);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -482,7 +482,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.info(message, t);
     } else {
       MessageBean bean = new MessageBean.Builder(message).throwable(t).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -514,7 +514,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.warn(message);
     } else {
       MessageBean bean = new MessageBean.Builder(message).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -543,7 +543,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -572,7 +572,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg1, arg2);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -601,7 +601,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.arrayFormat(message, arguments);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -628,7 +628,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.warn(message, t);
     } else {
       MessageBean bean = new MessageBean.Builder(message).throwable(t).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -660,7 +660,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.error(message);
     } else {
       MessageBean bean = new MessageBean.Builder(message).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -689,7 +689,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -718,7 +718,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.format(message, arg1, arg2);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -747,7 +747,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       FormattingTuple ft = MessageFormatter.arrayFormat(message, arguments);
       MessageBean bean =
           new MessageBean.Builder(ft.getMessage()).throwable(ft.getThrowable()).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -774,7 +774,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       logger.error(message, t);
     } else {
       MessageBean bean = new MessageBean.Builder(message).throwable(t).build();
-      logManager.manager(bean);
+      logManager.manage(bean);
     }
   }
 
@@ -785,5 +785,9 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
       throw new UnsupportedOperationException();
     }
     ((LocationAwareLogger) logger).log(marker, fqcn, level, message, argArray, t);
+  }
+
+  public void clearLog() {
+    logManager.clearLog();
   }
 }
