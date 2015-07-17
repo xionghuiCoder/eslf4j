@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Slf4jLog test
+ * Slf4jLog test 1
  *
  * @author xionghui
  * @date 2015年6月20日
