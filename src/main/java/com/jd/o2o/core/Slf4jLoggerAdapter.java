@@ -34,6 +34,7 @@ public final class Slf4jLoggerAdapter extends MarkerIgnoringBase implements Loca
   // that only JclSlf4jLoggerFactory be able to create one.
   Slf4jLoggerAdapter(Logger logger) {
     this.logger = logger;
+	this.name = logger.getName();
   }
 
   /**

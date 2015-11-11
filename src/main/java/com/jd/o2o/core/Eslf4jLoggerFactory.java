@@ -3,7 +3,6 @@ package com.jd.o2o.core;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,8 +34,7 @@ public final class Eslf4jLoggerFactory {
   public static Logger getLogger(String name) {
     Logger logger = LOGGER_MAP.get(name);
     if (logger == null) {
-      ILoggerFactory iLoggerFactory = LoggerFactory.getILoggerFactory();
-      Logger slf4jLogger = iLoggerFactory.getLogger(name);
+      Logger slf4jLogger = LoggerFactory.getLogger(name);
       logger = new Slf4jLoggerAdapter(slf4jLogger);
       Logger oldLogger = LOGGER_MAP.putIfAbsent(name, logger);
       if (oldLogger != null) {
