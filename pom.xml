@@ -2,35 +2,32 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.jd.o2o</groupId>
+	<groupId>com.github.xionghuicoder</groupId>
 	<artifactId>eslf4j</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>eslf4j</name>
-	<url>http://maven.apache.org</url>
+	<description>Expand simple logging facade for java</description>
+	<url>https://github.com/xionghuiCoder/eslf4j</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.6</java.version>
-		<slf4j.api.version>1.7.12</slf4j.api.version>
-		<slf4j.log4j12.version>1.7.12</slf4j.log4j12.version>
-		<spring.version>4.1.6.RELEASE</spring.version>
-		<aspectj.version>1.8.6</aspectj.version>
-		<junit.version>4.12</junit.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<spring.version>5.0.2.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.api.version}</version>
+			<version>${slf4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j.log4j12.version}</version>
+			<version>${slf4j.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -42,7 +39,7 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectj.version}</version>
+			<version>1.8.13</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -54,7 +51,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -64,37 +61,86 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>3.7.0</version>
 				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<showWarnings>true</showWarnings>
+					<encoding>UTF-8</encoding>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18</version>
+				<version>2.20.1</version>
 				<configuration>
-					<skipTests>true</skipTests>
+					<includes>
+						<include>**/testcase/**/*.java</include>
+					</includes>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.4</version>
+				<version>3.0.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
 						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
 							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<skip>false</skip>
+					<show>public</show>
+					<charset>UTF-8</charset>
+					<encoding>UTF-8</encoding>
+					<docencoding>UTF-8</docencoding>
+					<links>
+						<link>http://docs.oracle.com/javase/6/docs/api</link>
+					</links>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<connection>scm:git:git@github.com:xionghuiCoder/eslf4j.git</connection>
+		<developerConnection>scm:git:git@github.com:xionghuiCoder/eslf4j.git</developerConnection>
+		<url>https://github.com/xionghuiCoder/eslf4j.git</url>
+	</scm>
 
 	<licenses>
 		<license>
@@ -107,8 +153,27 @@
 
 	<developers>
 		<developer>
+			<id>xionghui</id>
 			<name>xionghui</name>
-			<email>xionghui@jd.com</email>
+			<email>xionghui_coder@163.com</email>
+		</developer>
+		<developer>
+			<id>wufuxing</id>
+			<name>wufuxing</name>
+			<email>1061076658@qq.com</email>
 		</developer>
 	</developers>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>sonatype-nexus-staging</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 </project>
